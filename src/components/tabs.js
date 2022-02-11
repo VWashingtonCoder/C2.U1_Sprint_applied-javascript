@@ -24,8 +24,7 @@ const Tabs = (topics) => {
   })
   return divTopics;
 }
-const topicArr = topics.topics;
-console.log(Tabs(topicArr));
+
 // TASK 4
 // ---------------------
 // Implement this function which takes a css selector as its only argument.
@@ -33,10 +32,12 @@ console.log(Tabs(topicArr));
 // Find the array of topics inside the response, and create the tabs using the Tabs component.
 // Append the tabs to the element in the DOM that matches the selector passed to the function.
 //
+const topicsArr = topics.topics
+
 const tabsAppender = (selector) => {
-  // const tabInfo = Tabs(topics);
-  // const position = document.querySelector(selector);
-  // position.appendChild(tabs);   
+  const tabInfo = Tabs(topicsArr);
+  const position = document.querySelector(selector);
+  position.appendChild(tabInfo);   
 }
 
 console.log(topics.topics[0])
