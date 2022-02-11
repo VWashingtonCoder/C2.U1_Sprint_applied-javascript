@@ -40,5 +40,4 @@ const tabsAppender = (selector) => {
   position.appendChild(tabInfo);   
 }
 
-console.log(topics.topics[0])
 export { Tabs, tabsAppender }
