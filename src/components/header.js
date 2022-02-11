@@ -11,7 +11,7 @@
 //  </div>
 //
 const Header = (title, date, temp) => {
-  // Institate
+  // instantiate
   const divHeader = document.createElement("div");
   const spanDate = document.createElement("span");
   const h1Title = document.createElement("h1");
@@ -37,8 +37,12 @@ const Header = (title, date, temp) => {
 // It should create a header using the Header component above, passing arguments of your choosing.
 // It should append the header to the element in the DOM that matches the given selector.
 //
+
+
 const headerAppender = (selector) => {
-  selector.appendChild(Header);
+  const headerInfo = Header("A Brief Project", "2/11/2022", '58')
+  const position = document.querySelector(selector)
+  position.appendChild(headerInfo);
 }
 
 export { Header, headerAppender }
