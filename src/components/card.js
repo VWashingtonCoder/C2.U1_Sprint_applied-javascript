@@ -1,6 +1,5 @@
 import { articles } from "../mocks/data";
-const jsObj = articles.articles.javascript
-console.log(jsObj[0])
+
 // TASK 5
 // ---------------------
 // Implement this function, which should return the markup you see below.
@@ -50,15 +49,42 @@ const Card = (article) => {
   return card;
 }
 
+// TASK 6
+// ---------------------
+// Implement this function that takes a css selector as its only argument.
+// It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
+// However, the articles do not come organized in a single, neat array. Inspect the response closely!
+// Create a card from each and every article object in the response, using the Card component.
+// Append each card to the element in the DOM that matches the selector passed to the function.
+//
 const cardAppender = (selector) => {
-  // TASK 6
-  // ---------------------
-  // Implement this function that takes a css selector as its only argument.
-  // It should obtain articles from this endpoint: `http://localhost:5000/api/articles` (test it in Postman/HTTPie!).
-  // However, the articles do not come organized in a single, neat array. Inspect the response closely!
-  // Create a card from each and every article object in the response, using the Card component.
-  // Append each card to the element in the DOM that matches the selector passed to the function.
-  //
+  const position = document.querySelector(selector);
+  const bsObj = articles.articles.bootstrap;
+  const jsObj = articles.articles.javascript;
+  const jqObj = articles.articles.jquery;
+  const ndObj = articles.articles.node;
+  const techObj = articles.articles.technology;
+  
+  bsObj.forEach(article => {
+    const jsCard = Card(article);
+    position.appendChild(jsCard);
+  });
+  jsObj.forEach(article => {
+    const jsCard = Card(article);
+    position.appendChild(jsCard);
+  });
+  jqObj.forEach(article => {
+    const jsCard = Card(article);
+    position.appendChild(jsCard);
+  });
+  ndObj.forEach(article => {
+    const jsCard = Card(article);
+    position.appendChild(jsCard);
+  });
+  techObj.forEach(article => {
+    const jsCard = Card(article);
+    position.appendChild(jsCard);
+  });
 }
 
 export { Card, cardAppender }
